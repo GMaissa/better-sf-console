@@ -16,7 +16,7 @@ namespace GMaissa\BetterSfConsole;
 use Symfony\Component\Console\Application as BaseApplication;
 use Symfony\Component\DependencyInjection\ContainerAwareInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
-use Lcobucci\DependencyInjection\ContainerBuilder;
+use Lcobucci\DependencyInjection\Builders\DelegatingBuilder;
 use Lcobucci\DependencyInjection\ContainerConfig;
 
 /**
@@ -33,19 +33,19 @@ abstract class Application extends BaseApplication implements ContainerAwareInte
      * Application logo
      * @var string $logo
      */
-    private static $logo = false;
+    protected $logo = false;
 
     /**
      * Dependency Injection Container
      * ContainerInterface/false $container
      */
-    private $container = false;
+    protected $container = false;
 
     /**
      * URL where the manifest.json file is hosted
      * @var string $manifestHost
      */
-    private $manifestHost = false;
+    protected $manifestHost = false;
 
     /**
      * Constructor.
@@ -112,7 +112,7 @@ abstract class Application extends BaseApplication implements ContainerAwareInte
      */
     public function getHelp()
     {
-        return self::$logo . parent::getHelp();
+        return $this->logo . parent::getHelp();
     }
 }
 
