@@ -1,7 +1,7 @@
 {
     "name": "gmaissa/better-sf-console",
     "description": "Dependency injection container aware console application",
-    "keywords": "Symfony Console, Dependency injection, Container",
+    "keywords": ["Symfony Console", "Dependency injection", "Container"],
     "type": "library",
     "license": "OSL-3.0",
     "authors": [
