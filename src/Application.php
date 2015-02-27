@@ -8,7 +8,7 @@
  * @package   BetterSfConsole.Core
  * @author    Guillaume Maïssa <guillaume@maissa.fr>
  * @copyright 2014 Guillaume Maïssa
- * @license   OSL-3
+ * @license   http://opensource.org/licenses/OSL-3.0 OSL-3
  */
 
 namespace GMaissa\BetterSfConsole;
@@ -31,27 +31,28 @@ abstract class Application extends BaseApplication implements ContainerAwareInte
 {
     /**
      * Application logo
-     * @var string $logo
+     * @var string
      */
     protected $logo = false;
 
     /**
      * Dependency Injection Container
-     * ContainerInterface/false $container
+     * @var ContainerInterface/false
      */
     protected $container = false;
 
     /**
      * URL where the manifest.json file is hosted
-     * @var string $manifestHost
+     * @var string
      */
     protected $manifestHost = false;
 
     /**
      * Constructor.
      *
-     * @param string $name    The name of the application
-     * @param string $version The version of the application
+     * @param string          $name            The name of the application
+     * @param string          $version         The version of the application
+     * @param ContainerConfig $containerConfig Configuration for dependency injection
      *
      * @api
      */
@@ -115,4 +116,3 @@ abstract class Application extends BaseApplication implements ContainerAwareInte
         return $this->logo . parent::getHelp();
     }
 }
-
